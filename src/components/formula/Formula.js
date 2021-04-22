@@ -10,6 +10,14 @@ export class Formula extends ExcelComponent{
 		})
 	}
 
+	onInput(event){
+		console.log('We are here, it is onInput!!!,', event.target.textContent.trim());
+	}
+
+	onClick(event){
+		console.log('We are here, it is onClick!!!')
+	}
+
 	toHTML(){
 		return `
 			<div class="info">
