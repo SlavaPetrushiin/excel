@@ -36,6 +36,16 @@ class Dom {
 		} else {
 			this.$el.appendChild(node);
 		}
+
+		return this;
+	}
+
+	closest(selector){
+		return $(this.$el.closest(selector)); //передаем нативный элемент в наш конструктор
+	}
+
+	getCoords(){
+		return this.$el.getBoundingClientRect();
 	}
 }
 

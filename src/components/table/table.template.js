@@ -6,7 +6,10 @@ const CODES = {
 function createRow(value, info = ''){
 	return `
 		<div class="row">
-			<div class="row-info">${info}</div>
+			<div class="row-info">
+				${info}
+				<div class="resize-row" data-resize="row"></div>
+			</div>
 			<div class="row-data">${value}</div>
 		</div>
 	`;
@@ -17,7 +20,12 @@ function createCell(value = ''){
 }
 
 function createCol(col){
-	return `<div class="column">${col}</div>`;
+	return `
+		<div class="column" data-type="resizble">
+			${col}
+			<div class="resize-col" data-resize="col"></div>
+		</div>
+	`;
 }
 
 function toChar(_,index){
