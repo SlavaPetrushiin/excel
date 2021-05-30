@@ -30,6 +30,17 @@
 
 	.row-data{
 		display: flex;
+		position: relative;
+
+		.resize-line{
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 4px;
+			background: #3c74ff;
+			display: none;
+		}
 	}
 
 	.column{
