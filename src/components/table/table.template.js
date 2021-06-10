@@ -5,19 +5,29 @@ const CODES = {
 
 function createRow(value, info = ''){
 	return `
-		<div class="row">
-			<div class="row-info">${info}</div>
-			<div class="row-data">${value}</div>
+		<div class="row" data-type="resizble">
+			<div class="row-info">
+				${info}
+				<div class="resize-row" data-resize="row"></div>
+			</div>
+			<div class="row-data">
+				${value}
+			</div>
 		</div>
 	`;
 }
 
-function createCell(value = ''){
-	return `<div class="cell">${value}</div>`
+function createCell(value = '', col){
+	return `<div class="cell" data-col=${col} contentedtable>${value}</div>`
 }
 
-function createCol(col){
-	return `<div class="column">${col}</div>`;
+function createCol(col, index){
+	return `
+		<div class="column" data-type="resizble" data-col=${index}>
+			${col}
+			<div class="resize-col" data-resize="col"></div>
+		</div>
+	`;
 }
 
 function toChar(_,index){
