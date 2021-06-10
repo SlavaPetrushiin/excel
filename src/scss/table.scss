@@ -31,16 +31,6 @@
 	.row-data{
 		display: flex;
 		position: relative;
-
-		.resize-line{
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			height: 4px;
-			background: #3c74ff;
-			display: none;
-		}
 	}
 
 	.column{
@@ -51,7 +41,6 @@
 		background-color: #f8f9fa;
 		min-width: 40px;
 		width: $cell-width;
-		height: 100;
 		border: 1px solid $border-color;
 		border-top: 0;
 		border-left: 0;
@@ -63,11 +52,7 @@
 		right: 0;
 		bottom: 0;
 		background: #3c74ff;
-		opacity: 1;
-
-		/*&:hover{
-			opacity: 1;
-		}*/
+		opacity: 0;
 	}
 
 	.resize-col{
@@ -76,6 +61,7 @@
 
 		&:hover{
 			cursor: col-resize;
+			opacity: 1 !important;
 		}
 	}
 
@@ -85,6 +71,7 @@
 
 		&:hover{
 			cursor: row-resize;
+			opacity: 1 !important;
 		}
 	}
 

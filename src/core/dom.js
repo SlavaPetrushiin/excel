@@ -40,12 +40,25 @@ class Dom {
 		return this;
 	}
 
+	get date (){
+		return this.$el.dataset;
+	}
+
 	closest(selector){
 		return $(this.$el.closest(selector)); //передаем нативный элемент в наш конструктор
 	}
 
 	getCoords(){
 		return this.$el.getBoundingClientRect();
+	}
+
+	findAll(selector){
+		return this.$el.querySelectorAll(selector);
+	}
+
+	css(styles = {}){
+		Object.keys(styles).forEach(key => this.$el.style[key] = styles[key]);
+		return this.$el;
 	}
 }
 

@@ -12,14 +12,13 @@ function createRow(value, info = ''){
 			</div>
 			<div class="row-data">
 				${value}
-				<div class="resize-line"></div>
 			</div>
 		</div>
 	`;
 }
 
-function createCell(value = '', index){
-	return `<div class="cell" data-col=${index}>${value}</div>`
+function createCell(value = '', col){
+	return `<div class="cell" data-col=${col} contentedtable>${value}</div>`
 }
 
 function createCol(col, index){
