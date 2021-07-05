@@ -19,6 +19,6 @@ export class Emitter {
 		} else{
 			this._subscribers[event].push(fn);
 		}		
-	}
+	} 
 }
 
