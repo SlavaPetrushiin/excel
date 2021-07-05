@@ -40,8 +40,17 @@ class Dom {
 		return this;
 	}
 
-	get date (){
+	get data (){
 		return this.$el.dataset;
+	}
+
+	id(parse){
+		if(parse){
+			const id = this.id();
+			const parsed = id.split(":");
+			return {row: +parsed[0], col: +parsed[1]};
+		}
+		return this.data.id;
 	}
 
 	closest(selector){
@@ -52,13 +61,30 @@ class Dom {
 		return this.$el.getBoundingClientRect();
 	}
 
+	find(selector){
+		return $(this.$el.querySelector(selector));
+	}
+
 	findAll(selector){
 		return this.$el.querySelectorAll(selector);
+	}
+
+	focus(){
+		this.$el.focus();
+		return this;
 	}
 
 	css(styles = {}){
 		Object.keys(styles).forEach(key => this.$el.style[key] = styles[key]);
 		return this.$el;
+	}
+
+	classListAdd(selector){
+		return this.$el.classList.add(selector);
+	}
+
+	classListRemove(selector){
+		return this.$el.classList.remove(selector);
 	}
 }
 

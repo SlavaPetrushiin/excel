@@ -4,7 +4,7 @@ export function resizeHandler($root, event){
 	const $resizer = $(event.target);		
 	const $parent = $resizer.closest('[data-type="resizble"]');
 	const coords = $parent.getCoords();
-	const numCol = $parent.date.col;
+	const numCol = $parent.data.col;
 	const cols = $root.findAll(`[data-col="${numCol}"]`);
 	const type = event.target.dataset.resize;
 	const sideProp = type === 'col' ? 'bottom': 'right';
