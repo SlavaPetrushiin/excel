@@ -1,4 +1,5 @@
 import { $ } from "../../core/dom";
+import { Emitter } from "../../core/Emmiter";
 import { ExcelComponent } from "../../core/ExcelComponent";
 import { isCell, matrix, nextSelector, shouldResize } from "./table.function";
 import { resizeHandler } from "./table.resize";
